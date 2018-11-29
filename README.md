@@ -6,7 +6,7 @@
 We've looked at time series and what they might look like. Now why do we need to model time series? Essentially, you're trying to find patterns and understand the data in a way that you 
 can use this information to (hopefully) make accurate predictions about the future.
 
-In this lesson you'll learn about two basic time series models: The white noise model, and the random walk model.
+In this lesson you'll learn about two basic time series models: the White Noise model, and the Random Walk model.
 
 ## Objectives
 
@@ -14,7 +14,7 @@ You will be able to:
 - Explain what the goal is of time series modeling
 - Understand and explain what a White Noise model is
 - Understand and explain what a Random Walk model is
-- Understand and apply the mathematical formulations or Random Walk and White Noise
+- Understand the mathematical formulations of Random Walk and White Noise models
 
 ## A White Noise model
 
