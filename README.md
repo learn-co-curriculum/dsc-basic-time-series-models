@@ -149,11 +149,20 @@ xr.tail()
 
 
 ```python
-xr['Euro'].plot(figsize = (14,4));
+xr['Euro'].plot(figsize = (14,5));
 ```
 
 
 ![png](index_files/index_12_0.png)
+
+
+
+```python
+xr['Australian Dollar'].plot(figsize = (14,5));
+```
+
+
+![png](index_files/index_13_0.png)
 
 
 More on random walk can be found [here](https://machinelearningmastery.com/gentle-introduction-random-walk-times-series-forecasting-python/) (to read up to where autocorrelation is covered).
