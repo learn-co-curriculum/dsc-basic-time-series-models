@@ -40,7 +40,7 @@ plt.show();
 ```
 
 
-![png](index_files/index_5_0.png)
+![png](index_files/index_1_0.png)
 
 
 The white noise model has three properties:
@@ -58,11 +58,11 @@ More information on White Noise series can be found [here](https://machinelearni
 Contrary to the white noise model, the random walk model, however
 
 - Has no specified mean or variance
-- Has a strong depencence over time
+- Has a strong dependence over time
 
 The changes over time are basically a white noise model. Mathematically, this can be written as:
 
-$$Y_t = Y_{t-1} + \epsilon_t$$
+$$\large Y_t = Y_{t-1} + \epsilon_t$$
 
 Where $\epsilon_t$ is a *mean zero* white noise model!
 
@@ -153,7 +153,7 @@ xr['Euro'].plot(figsize = (14,5));
 ```
 
 
-![png](index_files/index_12_0.png)
+![png](index_files/index_6_0.png)
 
 
 
@@ -162,7 +162,7 @@ xr['Australian Dollar'].plot(figsize = (14,5));
 ```
 
 
-![png](index_files/index_13_0.png)
+![png](index_files/index_7_0.png)
 
 
 More on random walk can be found [here](https://machinelearningmastery.com/gentle-introduction-random-walk-times-series-forecasting-python/) (to read up to where autocorrelation is covered).
@@ -171,7 +171,7 @@ More on random walk can be found [here](https://machinelearningmastery.com/gentl
 
 An extension of the Random Walk model is a so-called "Random Walk with a Drift", specified as follows:
 
-$$Y_t = c+ Y_{t-1} + \epsilon_t$$
+$$\large Y_t = c+ Y_{t-1} + \epsilon_t$$
 
 Here, there is a drift parameter $c$ steering in a certain direction! You'll get more insight in what a Random Walk model looks like in the lab that follows!
 
