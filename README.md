@@ -6,15 +6,15 @@
 We've looked at time series and what they might look like. Now why do we need to model time series? Essentially, you're trying to find patterns and understand the data in a way that you 
 can use this information to (hopefully) make accurate predictions about the future.
 
-In this lesson you'll learn about two basic time series models: the White Noise model, and the Random Walk model.
+In this lesson you'll learn about two basic time series models: the white noise and random walk models.
 
 ## Objectives
 
 You will be able to:
-- Explain what the goal is of time series modeling
-- Understand and explain what a White Noise model is
-- Understand and explain what a Random Walk model is
-- Understand the mathematical formulations of Random Walk and White Noise models
+
+- Explain the properties of a white noise model 
+- Explain the properties of a random walk model 
+
 
 ## A White Noise model
 
@@ -23,19 +23,15 @@ The white noise model is the simplest example of a true stationary process - bas
 
 ```python
 import pandas as pd
-from pandas import Series
 import numpy as np
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 %matplotlib inline
 
-nyse = pd.read_csv("NYSE_monthly.csv")
-col_name= 'Month'
-nyse[col_name] = pd.to_datetime(nyse[col_name])
-nyse.set_index(col_name, inplace=True)
+nyse = pd.read_csv('NYSE_monthly.csv')
+nyse['Month'] = pd.to_datetime(nyse['Month'])
+nyse.set_index('Month', inplace=True)
 
-# Draw a line plot using temp and .plot() function. 
 nyse.plot(figsize = (14,4))
-import matplotlib.pyplot as plt
 plt.show();
 ```
 
@@ -45,20 +41,20 @@ plt.show();
 
 The white noise model has three properties:
 
-- There is a fixed and constant mean
-- There is a fixed and constant variance
-- There is no correlation over time (we'll talk about correlation in time series later, essentially, what this means is that the pattern seems truly "random).
+- Fixed and constant mean
+- Fixed and constant variance
+- No correlation over time (we'll talk about correlation in time series later, essentially, what this means is that the pattern seems truly "random") 
 
-A special case of a White Noise model is Gaussian White Noise, where the constant mean is equal to zero, and the constant variance is equal to 1. You'll see later on that a white noise model is useful in many contexts!
+A special case of a white noise model is Gaussian white noise, where the constant mean is equal to zero, and the constant variance is equal to 1. You'll see later on that a white noise model is useful in many contexts!
 
-More information on White Noise series can be found [here](https://machinelearningmastery.com/white-noise-time-series-python/). You can disregard the content on autocorrelation functions for now, we'll cover that later!
+More information on white noise series can be found [here](https://machinelearningmastery.com/white-noise-time-series-python/). You can disregard the content on autocorrelation functions for now, we'll cover that later!
 
 ## A Random Walk model
 
-Contrary to the white noise model, the random walk model, however
+As opposed to the white noise model, the random walk model, however, has: 
 
-- Has no specified mean or variance
-- Has a strong dependence over time
+- No specified mean or variance
+- A strong dependence over time
 
 The changes over time are basically a white noise model. Mathematically, this can be written as:
 
@@ -66,11 +62,11 @@ $$\large Y_t = Y_{t-1} + \epsilon_t$$
 
 Where $\epsilon_t$ is a *mean zero* white noise model!
 
-Random walk processes are very common in finance. A typical example is exchange rates. The idea is that generally speaking (and unless any drastic events happen), tomorrow's currency exchange rate will be strongly influenced by today's exchange rate, with a small change (either positive or negative). The data set below contains the exchange rates for the Euro, Australian Dollar, and Danish Crone with the US Dollar, from January 2000 until November 26, 2018.
+Random walk processes are very common in finance. A typical example is exchange rates. The idea is that generally speaking (and unless any drastic events happen), tomorrow's currency exchange rate will be strongly influenced by today's exchange rate, with a small change (either positive or negative). The dataset below contains the exchange rates for the Euro, Australian Dollar, and Danish Crone with the US Dollar, from January 2000 until November 26, 2018.
 
 
 ```python
-xr = pd.read_csv("exch_rates.csv")
+xr = pd.read_csv('exch_rates.csv')
 
 xr['Frequency'] = pd.to_datetime(xr['Frequency'])
 xr.set_index('Frequency', inplace=True)
@@ -165,16 +161,16 @@ xr['Australian Dollar'].plot(figsize = (14,5));
 ![png](index_files/index_7_0.png)
 
 
-More on random walk can be found [here](https://machinelearningmastery.com/gentle-introduction-random-walk-times-series-forecasting-python/) (to read up to where autocorrelation is covered).
+More on random walk can be found [here](https://machinelearningmastery.com/gentle-introduction-random-walk-times-series-forecasting-python/).
 
-## A Random Walk with a drift
+## A Random Walk with a Drift
 
-An extension of the Random Walk model is a so-called "Random Walk with a Drift", specified as follows:
+An extension of the random walk model is a so-called "random walk with a drift", specified as follows:
 
-$$\large Y_t = c+ Y_{t-1} + \epsilon_t$$
+$$\large Y_t = c + Y_{t-1} + \epsilon_t$$
 
-Here, there is a drift parameter $c$ steering in a certain direction! You'll get more insight in what a Random Walk model looks like in the lab that follows!
+Here, there is a drift parameter $c$, steering in a certain direction! You'll get more insight in what a random walk model looks like in the lab that follows!
 
 ## Summary
 
-Great, you now know how a Random Walk and Moving Average model work. In the next lab, you'll practice your knowledge!
+Great, you now know how white noise and random walk models work. In the next lab, you'll practice this knowledge to build these models from scratch!
